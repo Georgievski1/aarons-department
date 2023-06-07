@@ -37,14 +37,17 @@ class ShiftSeeder extends Seeder
             $hour_rate = preg_replace("/[^0-9\.]/", '', $row[4]);
             $hour_rate = (int)$hour_rate;
             $total = $hours * $hour_rate;
+            $status = preg_replace('/\s+/', '', $row[6]);
+            $shift_type = preg_replace('/\s+/', '', $row[7]);
+
               return [
                   "shift_date" => $row[0],
                   "user_id" => $worker->id,
                   "hours" => $hours,
                   "hour_rate" => $hour_rate,
                   "taxable" => $row[5],
-                  "status" => $row[6],
-                  "shift_type" => $row[7],
+                  "status" => $status,
+                  "shift_type" => $shift_type,
                   "paid" => $row[8],
                   "total" => $total,
                   "created_at" => Carbon::now(),

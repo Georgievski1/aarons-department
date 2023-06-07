@@ -85,7 +85,7 @@
     />
 
     <Modal v-bind="{show: show}" @close="toggleShow" />
-    <EditModal :openEditModal="openEditModal" :shift="this.shift" @close="toggleEditModal" :worker="shift.worker" />
+    <EditModal :openEditModal="openEditModal" :shift="this.shift" @close="toggleEditModal" :worker="shift.worker" :loadShifts="loadShifts" />
 
     </div>
 </template>

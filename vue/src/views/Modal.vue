@@ -151,8 +151,9 @@ export default {
       axios.post('http://localhost:8000/api/shifts/create', this.shift)
       .then(function (response) {
       }).catch(function (error) {
-        console.log(error)
+        
       })
+      this.$emit('close')
     },
   },
   components: {
